@@ -704,6 +704,22 @@ export default function Success(props: PageProps) {
                                   />
                                 </>
                               )}
+                              {typeof locationToDisplay === "string" && locationToDisplay.startsWith("http") && (
+                                <div className="bg-subtle mt-3 rounded-md p-3">
+                                  <p className="text-emphasis text-sm font-medium">Link da chamada (Zoom)</p>
+                                  <p className="text-default mt-1 break-all text-sm" data-testid="call-link">{locationToDisplay}</p>
+                                  <Button
+                                    type="button"
+                                    color="secondary"
+                                    className="mt-2"
+                                    onClick={() => {
+                                      navigator.clipboard.writeText(locationToDisplay);
+                                      showToast("Link copiado!", "success");
+                                    }}>
+                                    Copiar link
+                                  </Button>
+                                </div>
+                              )}
                             </div>
                           </>
                         )}
