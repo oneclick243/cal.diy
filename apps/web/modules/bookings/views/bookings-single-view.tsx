@@ -1149,7 +1149,7 @@ export default function Success(props: PageProps) {
                     </>
                   ))}
               </div>
-              {isGmail && !isFeedbackMode && (
+              {false && isGmail && !isFeedbackMode && (
                 <Alert
                   className="main -mb-20 mt-4 inline-block ltr:text-left rtl:text-right sm:-mt-4 sm:mb-4 sm:w-full sm:max-w-xl sm:align-middle"
                   severity="warning"
